@@ -3,7 +3,7 @@ var precio = document.getElementById("etiquetaValor");
 var resultado = document.getElementById("calcular");
 var costoSeguro = "";
 
-//objeto
+//------------------------objeto----------------->
 function Vehiculo(tipo, anio, valor) {
   this.tipo = tipo;
   this.anio = anio;
@@ -20,7 +20,7 @@ var vehiculoUno = new Vehiculo("auto", "modelo", "precio");
 
 function costo() {
   if (precio.value <= 100000) {
-    costoSeguro = (precio.value * 2.5) / 100;
+    costoSeguro = (precio.value * 2) / 100;
   } else {
     costoSeguro = (precio.value * 3) / 100;
   }
@@ -28,14 +28,19 @@ function costo() {
 
 //evento click para el boton "calcular"
 resultado.addEventListener("click", function () {
-  costo();
-  alert(gettext);
+  const combo = document.getElementById("tipo-vehiculo");
+  const selected = combo.options[combo.selectedIndex].text;
 
-  document.getElementById("modalCosto").innerHTML = `
-    <p> COSTO DEL SEGURO: ${costoSeguro} </p>`;
+  costo();
 
   document.getElementById("modalVehiculo").innerHTML = `
-    <p> COSTO DEL SEGURO: ${gettext} </p>`;
+    <p> Tipo de vehiculo: ${selected} </p>`;
+
+  document.getElementById("modalModelo").innerHTML = `
+    <p> Modelo: ${modelo.value} </p>`;
+
+  document.getElementById("modalCosto").innerHTML = `
+    <p> Costo del seguro: $${costoSeguro} </p>`;
 
   console.log(vehiculoUno);
   console.log(vehiculoUno.cotizar);

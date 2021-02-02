@@ -1,120 +1,97 @@
-*{
-
-    padding: 0;
-    margin:0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-
-
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
-
 
 /*-------------------nav-----------------*/
 nav {
-
-    width: 100%;
+  width: 100%;
 }
 
-nav a  {
-
- color: white;
+nav a {
+  color: white;
 }
 
 nav button {
-
-    color: white;
+  color: white;
 }
 
 nav ul li a {
-
-    color: white;
-    margin: 0 50px;
-    
+  color: white;
+  margin: 0 50px;
 }
 
-.navbar-toggler{
-
-    display: none;
+.navbar-toggler {
+  display: none;
 }
 
-.boton-menu{
-
-    color: white;
-    font-size: 30px;
-    visibility: hidden;
+.boton-menu {
+  color: white;
+  font-size: 30px;
+  visibility: hidden;
 }
-.navbar-brand{
-
-    font-family: 'Righteous', cursive;
-    
+.navbar-brand {
+  font-family: "Righteous", cursive;
 }
-
-
 
 /*-------------------portada-----------------*/
 .main {
-   
-    background: rgb(119,201,212);
-    background: linear-gradient(0deg, rgba(79, 123, 129, 0.60) 0%, rgba(87, 188, 144, 0.60) 100%), url(images/portada.jpeg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-  
+  background: rgb(119, 201, 212);
+  background: linear-gradient(
+      0deg,
+      rgba(79, 123, 129, 0.493) 0%,
+      rgba(87, 188, 144, 0.493) 100%
+    ),
+    url(images/portada.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
-h1{
+h1 {
+  font-size: 40px;
+  color: #015249;
+  width: 70%;
+  margin: auto;
+  margin-top: 30px;
+  font-family: "Righteous", cursive;
+}
+
+.formulario {
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.formulario label {
+  color: white;
+}
+/*----------------------MOBILE-VERSION-------------------*/
+@media (max-width: 992px) {
+  /*-------------------nav-----------------*/
+
+  .boton-menu {
+    color: white;
     font-size: 30px;
-    color: #015249;
-    width: 50%;
+    visibility: visible;
+  }
+
+  .navbar-brand {
+    width: 60%;
     margin: auto;
-    margin-top: 30px;
-    font-family: 'Righteous', cursive;
- }
+  }
+  h1 {
+    font-size: 30px;
+    margin-left: 38px;
+    width: 100%;
+  }
 
-.formulario{
-
-    border: 1px solid white;
-    border-radius: 10px;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 80px;
-}
-
-.formulario label{
-
-    color:white
- }
-
- @media (max-width: 992px) {
-   
-   
-    /*-------------------nav-----------------*/
-
-    .boton-menu{
-
-        color: white;
-        font-size: 30px;
-        visibility: visible;
-    
-    }
-     
-    .navbar-brand{
-
-        width: 60%;
-        margin: auto;
-        
-    }
-    h1{
-
-        font-size: 20px;
-        margin-left: 73px;
-    }
-
-    .formulario{
-  
-        margin-top: 40px;
-    }
-
-
+  .formulario {
+    margin-top: 40px;
+  }
 }
