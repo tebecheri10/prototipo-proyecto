@@ -1,3 +1,4 @@
+
 var modelo = document.getElementById("etiquetaModelo");
 var precio = document.getElementById("etiquetaValor");
 var resultado = document.getElementById("calcular");
@@ -73,7 +74,7 @@ resultado.addEventListener("click", function () {
   localStorage.removeItem("ultima cotizacion", utlimaCotizacionString);
   localStorage.setItem("ultima cotizacion", utlimaCotizacionString);
   ToastUltimaCotizacion()
-  
+
 });
 
 
@@ -90,10 +91,10 @@ $(document).ready(function () {
 
 function ToastUltimaCotizacion() {
   getLocalStorage = localStorage.getItem("ultima cotizacion");
- arrayGetLocalStorage = JSON.parse(getLocalStorage);
+  arrayGetLocalStorage = JSON.parse(getLocalStorage);
   console.log(arrayGetLocalStorage);
 
-     liArray = document.getElementById("list-toast-body").innerHTML = `
+  liArray = document.getElementById("list-toast-body").innerHTML = `
             <li>Tipo de vehiculo:${arrayGetLocalStorage[1]} </li>
             <li>Año de vehiculo:${arrayGetLocalStorage[0]}</li>
             <li>Valor del Seguro: $${arrayGetLocalStorage[2]}</li>
