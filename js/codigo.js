@@ -101,3 +101,23 @@ function ToastUltimaCotizacion() {
       
        `
 };
+
+//efectos hover en la seleccion de seguro
+$(".card-uno").mouseover(function(){
+  $(".card-uno").css("transform", "scale(1.1)");
+});
+$(".card-uno").mouseout(function(){
+  $(".card-uno").css("transform", "scale(1)");
+});
+$(".card-dos").mouseover(function(){
+  $(".card-dos").css("transform", "scale(1.1)");
+});
+$(".card-dos").mouseout(function(){
+  $(".card-dos").css("transform", "scale(1)");
+});
+$(".card-tres").mouseover(function(){
+  $(".card-tres").css("transform", "scale(1.1)");
+});
+$(".card-tres").mouseout(function(){
+  $(".card-tres").css("transform", "scale(1)");
+});
