@@ -9,138 +9,324 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
   <link rel="stylesheet" href="css/estilos.css" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/e16bcf6ee5.js" crossorigin="anonymous"></script>
+
 </head>
 
 <body onload="ToastUltimaCotizacion()">
 
 
   <!------------------------------Nav------------------------->
-
-  <div class="container-fluid main col-sm-12">
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#">ROMA SEGUROS S.A</a>
-      <button class="navbar-toggler" id="menu-icon" type="button" data-toggle="collapse"
-        data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-        aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <label for="menu-icon" class="boton-menu"><i class="fas fa-bars"></i></label>
-      <div class="collapse navbar-collapse links" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Cotizador <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Beneficios</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Nosotros</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contacto</a>
-          </li>
+  <div class="main">
+    <nav>
+      <div class="logo-contenedor"><img class="logo" src="images/Logo.png" alt=""></div>
+      <div class="contenedor-links">
+        <ul>
+          <li><a href="#target-cotizador">Cotizador</a></li>
+          <li><a href="#target-beneficios">Beneficios</a></li>
+          <li><a href="#target-nosotros">Nosotros</a></li>
+          <li><a href="#target-contacto">Contacto</a></li>
         </ul>
       </div>
     </nav>
 
+    <div class="titulo-portada">
+      <h2>Es momento de proteger </h2>
+      <h2>lo mas importante </h2>
+    </div>
+  </div>
 
-    <!------------------------------cotizador------------------------->
+
+  <!-------------------------------------tipos de seguros------------------------------->
 
 
-    <div class="row justify-content-center">
-      <div class="col-md-6 col-sm-12 align-self-center">
-        <div class="container titulo-formulario">
-          <h1>Cotiza tu seguro</h1>
-        </div>
-        <div class="form-group formulario">
-          <label for="tipo-vehiculo">Vehiculo</label>
-          <select class="form-control mb-2" id="tipo-vehiculo">
-            <option value="auto">Auto</option>
-            <option value="camion">Camión</option>
-            <option value="moto">Moto</option>
-          </select>
-          <label for="etiquetaModelo">Año</label>
-          <input type="number" id="etiquetaModelo" value="1990" class="form-control mb-2" min="1990" max="2021" />
-          <label for="etiquetaValor">valor aproximado</label>
-          <input type="number" id="etiquetaValor" class="form-control mb-2" min="20000" />
-          <button type="button" id="calcular" class="btn btn-primary mt-5" data-toggle="modal"
-            data-target="#staticBackdrop">
-            Calcular
-          </button>
-        </div>
-      </div>
+  <div   class="contenedor-tipos-de-seguro">
+
+    <div class="seguro-automotor">
+      <img src="images/Logoauto.png" alt="">
+      <h3>Seguro automotor</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa aut culpa assumenda pariatur accusantium facere
+        quam? hola hola hola</p>
+      <button href="#target-cotizador" id="boton-cotizar-automotor">cotizar online</button>
+
+    </div>
+    <div class="seguro-hogar">
+      <img src="images/logocasa.png" alt="">
+      <h3>Seguro de hogar</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus eveniet quas alias. Fugit harum fuga qui?
+      </p>
+      <button id="boton-cotizar-hogar" data-toggle="modal" data-target="#exampleModal">contacta un asesor</button>
+
+    </div>
+    <div class="seguro-vida">
+      <img src="images/logovida.png" alt="">
+      <h3>seguro de vida</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio atque quas doloribus excepturi rerum
+        assumenda tempore!</p>
+      <button id="boton-cotizar-vida" data-toggle="modal" data-target="#exampleModal">contacta un asesor</button>
+
     </div>
 
-    <!------------------------------modal------------------------->
 
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
-      aria-labelledby="staticBackdropLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="staticBackdropLabel">
-              VALOR ESTIMADO DE TU SEGURO
-            </h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body" id="modalVehiculo">
-            <p>...</p>
-          </div>
-          <div class="modal-body" id="modalModelo">
-            <p>...</p>
-          </div>
-          <div class="modal-body" id="modalCosto">
-            <p>...</p>
-          </div>
-          <!--cards-->
-          <div class="cards-group">
-            <div class="card card-uno m-1" style="width: 22rem;">
-              <div class="card-body ">
-                <h5 class="card-title">Responsabilidad civil</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text"> and make up the bulk of the card's content.</p>
-                <input type="radio" id="seguro-opcion-1" name="seguro-elegido" checked="checked">
-                <label for="seguro-opcion-1">seleccionar</label>
-              </div>
-            </div>
-            <div class="card card-dos m-1" style="width: 22rem;">
-              <div class="card-body">
-                <h5 class="card-title">Terceros completo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">and make up the bulk of the card's content.</p>
-                <input type="radio" id="seguro-opcion-2" name="seguro-elegido">
-                <label for="seguro-opcion-2">seleccionar</label>
-              </div>
-            </div>
-            <div class="card card-tres m-1" style="width: 22rem;">
-              <div class="card-body">
-                <h5 class="card-title">Contra todo riesgo</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                <p class="card-text">and make up the bulk of the card's content.</p>
-                <input type="radio" id="seguro-opcion-tres" name="seguro-elegido">
-                <label for="seguro-opcion-3">seleccionar</label>
-              </div>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              cerrar
-            </button>
-            <button type="button" class="btn btn-primary"> <a href="pages/solicitud.html">Continuar</a> </button>
-          </div>
+  </div>
+
+
+
+  <!------------------------------cotizador------------------------->
+
+
+  <div id="target-cotizador" class="row mt-5  justify-content-center">
+    <div class="col-md-6 col-sm-12 align-self-center">
+      <div class="container-titulo-formulario">
+        <h2>Cotizador online</h2>
+      </div>
+      <div class="form-group formulario">
+        <label for="tipo-vehiculo">Vehiculo</label>
+        <select class="form-control mb-2" id="tipo-vehiculo">
+          <option value="auto">Auto</option>
+          <option value="camion">Camión</option>
+          <option value="moto">Moto</option>
+        </select>
+        <label for="etiquetaModelo">Año</label>
+        <input type="number" id="etiquetaModelo" value="1990" class="form-control mb-2" min="1990" max="2021" />
+        <label for="etiquetaValor">valor aproximado</label>
+        <input type="number" id="etiquetaValor" class="form-control mb-2" min="20000" />
+        <button type="button" id="calcular" class="btn btn-primary mt-5" data-toggle="modal"
+          data-target="#staticBackdrop">
+          Calcular
+        </button>
+      </div>
+    </div>
+  </div>
+  <!------------------------------banner------------------------->
+
+  <div class="contenedor-banner">
+    <h4>
+      Mira todos los beneficios que tenés
+    </h4>
+    <h4>
+      por contrar tu seguro con nosotros
+    </h4>
+  </div>
+
+  <!------------------------------beneficios------------------------->
+  <div id="target-beneficios" class="contenedor-beneficios">
+    <div class="beneficios">
+      <div class="grua">
+        <div class="contenedor-img-grua">
+          <img src="images/beneficioGrua.png" alt="">
+        </div>
+        <div class="contenedor-texto-grua">
+          <h3>
+            Grua las 24hs , los 365 dias del año
+          </h3>
+          <p>
+            Servicio de asistencia en todo momento
+          </p>
+          <p>
+            sin limite de auxilios en el mes
+          </p>
+        </div>
+      </div>
+
+      <div class="app">
+        <div class="contenedor-img-app">
+          <img src="images/beneficioapp.png" alt="">
+        </div>
+        <div class="contenedor-texto-app">
+          <h3>
+            Aplicacion movil en android y en IOS
+          </h3>
+          <p>
+            App para que puedas controlar tus polizas,</p>
+          <p>
+            vencimientos y siniestros estes donde estes.
+          </p>
+        </div>
+      </div>
+
+      <div class="descuentos">
+        <div class="contenedor-img-descuentos">
+          <img src="images/beneficioAuto.png" alt="">
+        </div>
+        <div class="contenedor-texto-descuentos">
+          <h3>
+            Descuento en accesorios para tu auto
+          </h3>
+          <p>
+            20% de descuento en los mejores comercios</p>
+          <p>
+            de venta de accesorios para autos.
+          </p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-------------------------------------------------Toast----------------------->
+
+  </div>
+  <!------------------------------Nosotros------------------------->
+
+  <div id="target-nosotros" class="contenedor-titulo-nosotros">
+    <h2>
+      Queremos que nos conozcas
+    </h2>
+  </div>
+  <div class="contenedor-nosotros">
+
+    <p>
+      Contamos con 25 años de experiencia y de trabajo duro para darte a vos y tu familia
+      la seguridad de estar protegidos, sabemos como cuidar a nuestros clientes.
+      En Roma seguros , tus preocupaciones son nuestra prioridad, es por eso que te esperamos
+      en nuestra sucursal ubicada en la avenida Cabildo al 2343 CABA para poder conocerte
+      y ofrecerte lo mejor de nuestro equipo.
+    </p>
+
+  </div>
+
+  <!------------------------------Contacto------------------------->
+  <div id="target-contacto" class="contenedor-form">
+
+    <form class="form-group"">
+        <h2 class=" align-self-center">CONTACTANOS</h2>
+      <input type=" text" placeholder="Nombre">
+      <input type="number" placeholder="Telefono">
+      <input type="email" placeholder="Email">
+      <textarea name="" id="" cols="30" rows="10"></textarea>
+      <input type="submit" class="btn btn-dark align-self-center">
+    </form>
+
+    <div class="contenedor-datos-contacto">
+
+      <img src="images/Logo-blanco.png" alt="">
+      <h3>Sucursales</h3>
+      <ul class="list-group">
+        <li>
+          <p>Rivadavia 3242 CABA</p>
+        </li>
+        <li>
+          <p>Av.San Martin142 Ramos Mejia</p>
+        </li>
+        <li>
+          <p>Av.Libertador 2131 Moreno</p>
+        </li>
+      </ul>
+      <hr>
+      <h4>Tambien encontranos en las redes sociales</h4>
+      <div class="contenedor-iconos-redes">
+        
+      <a href="https://www.facebook.com" target="_blank">  <i class="fab fa-facebook-square"></i></a>
+       <a href=https://www.instagram.com " target="_blank"> <i class="fab fa-instagram-square"></i></a>
+       <a href="https://www.twitter.com" target="_blank"> <i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+
+ <!------------------------------footer------------------------->
+ <footer  class="contenedor-footer">
+   <div class="contenedor-derechos">
+    <div class="texto-derechos">  
+    <h3>Copiright</h3>
+      <p>Todos los derechos reservados a Roma Seguros S.A</p>
+    </div>
+    </div>
+    <div class="contenedor-mapa-sitio">
+      <div class="mapa-del-sitio">
+      <h4>mapa del sitio</h4>
+      <ul>
+        <li><a href="">inicio</a></li>
+        <li><a href="">cotizador</a></li>
+        <li><a href="">beneficios</a></li>
+        <li><a href="">Contacto</a></li>
+      </ul>
+    </div>
+
+    </div>
+
+
+
+
+ </footer>
+
+
+  <!------------------------------modal------------------------->
+
+  <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title titulo-valor-estimado" id="staticBackdropLabel">
+            VALOR ESTIMADO DE TU SEGURO
+          </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="modalVehiculo">
+          <p>...</p>
+        </div>
+        <div class="modal-body" id="modalModelo">
+          <p>...</p>
+        </div>
+        <div class="modal-body" id="modalCosto">
+          <p>...</p>
+        </div>
+         <hr>
+        <!--cards-->
+        <div class="cards-group">
+          <div class="card card-uno m-2" style="width: 22rem;">
+            <div class="card-body ">
+              <h5 class="card-title">Responsabilidad civil</h5>
+              <div id="responsabilidad-civil">
+
+              </div>
+              <p class="card-text"> </p>
+              <input type="radio" id="seguro-opcion-1" name="seguro-elegido" checked="checked">
+              <label for="seguro-opcion-1">seleccionar</label>
+            </div>
+          </div>
+          <div class="card card-dos m-2" style="width: 22rem;">
+            <div class="card-body">
+              <h5 class="card-title">Terceros completo</h5>
+              <div id="terceros-completo"></div>
+              <p class="card-text"></p>
+              <input type="radio" id="seguro-opcion-2" name="seguro-elegido">
+              <label for="seguro-opcion-2">seleccionar</label>
+            </div>
+          </div>
+          <div class="card card-tres m-2" style="width: 22rem;">
+            <div class="card-body">
+              <h5 class="card-title">Contra todo riesgo</h5>
+              <div id="todo-riesgo">
+
+              </div>
+              <p class="card-text"></p>
+              <input type="radio" id="seguro-opcion-tres" name="seguro-elegido">
+              <label for="seguro-opcion-3">seleccionar</label>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">
+            cerrar
+          </button>
+          <button type="button" class="btn btn-primary"> <a href="pages/solicitud.html">Continuar</a> </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+
+
+  <!---------------------------------------Toast-ultima-cotizacion-------------------------->
 
   <div class="toast" style="position: fixed; top: 80px; right: 0" data-delay="100000">
     <div class="toast-header">
@@ -154,16 +340,38 @@
     <div class="toast-body">
       <ul id="list-toast-body"></ul>
     </div>
-    <div class="container ml-5 mb-2" >
-    <button class="btn btn-primary btn-sm " data-toggle="modal" > <a href="pages/solicitud.html">solicitar</a> </button>
-  </div>
+    <div class="container ml-5 mb-2">
+      <button class="btn btn-primary btn-sm " data-toggle="modal"> <a href="pages/solicitud.html">solicitar</a>
+      </button>
+    </div>
   </div>
 
+
+  <!---------------------------------------modal asesor disponible-------------------------->
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Tu asesor mas cercano</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body modal-asesor-body">
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">cerrar</button>
+          <button type="button" class="btn btn-primary btn-contactar">Contactar</button>
+        </div>
+      </div>
+    </div>
+  </div>
   <!--scripts-->
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
     integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>

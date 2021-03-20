@@ -1,7 +1,7 @@
 
-var modelo = document.getElementById("etiquetaModelo");
-var precio = document.getElementById("etiquetaValor");
-var resultado = document.getElementById("calcular");
+/*var modelo = document.getElementById("etiquetaModelo");
+var precio = document.getElementById("etiquetaValor");*/
+//var resultado = document.getElementById("calcular");
 var costoSeguro = "";
 
 
@@ -27,6 +27,8 @@ var vehiculoUno = new Vehiculo("auto", "modelo", "precio");
 
 
 
+
+
 //array para local Storage
 ultimaCotizacion = [];
 
@@ -34,21 +36,28 @@ ultimaCotizacion = [];
 
 
 
-//funcion para calcular el valor del seguro
-
-function costo() {
-  if (precio.value <= 100000) {
-    costoSeguro = (precio.value * 2) / 100;
-  } else {
-    costoSeguro = (precio.value * 3) / 100;
-  }
-}
-
 
 
 //evento click para el boton "calcular"
 
-resultado.addEventListener("click", function () {
+/*resultado.addEventListener("click",*/
+
+    $("#calcular").click (function () {
+
+    var modelo = $("#etiquetaModelo").val();  /* getElement*/
+    var precio = $("#etiquetaValor").val();   /* getElement*/
+
+//funcion para calcular el valor del seguro
+    function costo() {
+      if (precio/*.value*/ <= 100000) {
+        costoSeguro = (precio * 1.5) / 100;
+      } else {
+        costoSeguro = (precio * 2) / 100;
+      }
+    }
+
+
+
   const combo = document.getElementById("tipo-vehiculo");
   const selected = combo.options[combo.selectedIndex].text;
 
@@ -58,15 +67,30 @@ resultado.addEventListener("click", function () {
     <p> Tipo de vehiculo: ${selected} </p>`;
 
   document.getElementById("modalModelo").innerHTML = `
-    <p> Modelo: ${modelo.value} </p>`;
+    <p> Modelo: ${modelo} </p>`;
 
   document.getElementById("modalCosto").innerHTML = `
-    <p> Costo del seguro: $${costoSeguro} </p>`;
+    <p> Costo de tu vehiculo: $${precio} </p>`;
+
+    document.getElementById("responsabilidad-civil").innerHTML = `
+    <h5>$${costoSeguro}</h5> `;
+
+    document.getElementById("terceros-completo").innerHTML = `
+    <h5>$${costoSeguro + (costoSeguro* 10 / 100) }</h5> `;
+
+    document.getElementById("todo-riesgo").innerHTML = `
+    <h5>$${costoSeguro + (costoSeguro* 30 / 100) }</h5> `;
+
+
+
+  
+    
+
 
   //vacia el array para agregar de nuevo con el push
   ultimaCotizacion.splice(0, 3);
   //push al array
-  ultimaCotizacion.push(modelo.value, selected, costoSeguro);
+  ultimaCotizacion.push(modelo, selected, costoSeguro);
 
   //De array a JSON
   utlimaCotizacionString = JSON.stringify(ultimaCotizacion);
@@ -98,9 +122,11 @@ function ToastUltimaCotizacion() {
             <li>Tipo de vehiculo:${arrayGetLocalStorage[1]} </li>
             <li>Año de vehiculo:${arrayGetLocalStorage[0]}</li>
             <li>Valor del Seguro: $${arrayGetLocalStorage[2]}</li>
-      
+           
        `
 };
+
+
 
 //efectos hover en la seleccion de seguro
 $(".card-uno").mouseover(function(){
@@ -121,3 +147,59 @@ $(".card-tres").mouseover(function(){
 $(".card-tres").mouseout(function(){
   $(".card-tres").css("transform", "scale(1)");
 });
+
+
+//---------------------------------------------------scroll------
+
+
+$(document).ready(function() {
+  $("#boton-cotizar-automotor").click(function() {
+    $("body,html").animate(
+      {
+        scrollTop: $("#target-cotizador").offset().top
+      },
+      60 //speed
+    );
+  });
+  $(".btn-contactar").click(function() {
+    $("body,html").animate(
+      {
+        scrollTop: $("#target-contacto").offset().top
+      },
+      60 //speed
+    );
+  });
+});
+
+
+//---------------------------AJAX-----------------------------------
+$(document).ready(function(){
+  
+  $("#boton-cotizar-vida").click(function(){
+    $.get('../sucursales.json', function(datosAsesor){
+         console.log(datosAsesor);
+        
+    $(".modal-asesor-body").html("<ul>"+"<li> nombre: "+datosAsesor.nombre +"</li>"+"<li> sucursal: "+datosAsesor.sucursal +"</li>" +"<li> telefono: "+datosAsesor.telefono +"</li>" +"<li> direccion: "+datosAsesor.direccion +"</li>" +"</ul>")
+         
+    });
+
+  });
+
+
+  $("#boton-cotizar-hogar").click(function(){
+    
+   
+    $.get('../sucursales.json', function(datosAsesor){
+         console.log(datosAsesor);
+        
+    $(".modal-asesor-body").html("<ul>"+"<li> nombre: "+datosAsesor.nombre +"</li>"+"<li> sucursal: "+datosAsesor.sucursal +"</li>" +"<li> telefono: "+datosAsesor.telefono +"</li>" +"<li> direccion: "+datosAsesor.direccion +"</li>" +"</ul>")
+         
+    });
+
+  });
+ 
+
+ 
+});
+
+

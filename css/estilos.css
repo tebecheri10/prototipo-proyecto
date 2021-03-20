@@ -3,70 +3,175 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
 }
 
 /*-------------------nav-----------------*/
-nav {
-  width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.452);
-}
-
-nav a {
-  color: white;
-}
-
-nav button {
-  color: white;
-}
-
-nav ul li a {
-  color: white;
-  margin: 0 50px;
-  font-size: 16px;
-  font-family: "Righteous", cursive;
-}
-.nav-link:hover {
-  box-sizing: initial;
-  color: white;
-}
-.navbar-brand:hover {
-  color: white;
-}
-
-.navbar-toggler {
-  display: none;
-}
-
-.boton-menu {
-  color: white;
-  font-size: 30px;
-  visibility: hidden;
-}
-.navbar-brand {
-  font-family: "Righteous", cursive;
-}
-
-/*-------------------portada-----------------*/
 .main {
-  background: rgb(119, 201, 212);
-  background: linear-gradient(
-      0deg,
-      rgba(79, 123, 129, 0.4) 0%,
-      rgba(87, 188, 144, 0.4) 100%
-    ),
-    url(../images/portada.jpeg);
-  background-size: cover;
-  background-repeat: no-repeat;
+  width: 100%;
   height: 100vh;
+
+  background-image: url(../images/familia.jpg);
+  background-size: 100% 100%;
+  margin-bottom: 40px;
 }
 
-h1 {
-  font-size: 40px;
-  color: #015249;
-  width: 65%;
+nav {
+  background-color: #015249c5;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.logo-contenedor {
+  width: 40%;
+}
+.logo {
+  height: 80px;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+.contenedor-links {
+  width: 60%;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 45px;
+  padding: 5px;
+  list-style: none;
+}
+
+ul li a {
+  color: white;
+  font-size: 20px;
+  height: 60px;
+}
+
+ul li a:hover {
+  color: white;
+  border-top: 2px solid #57bc90;
+  text-decoration: none;
+}
+
+.titulo-portada {
+  padding: 60px;
   margin: auto;
-  margin-top: 30px;
-  font-family: "Righteous", cursive;
+}
+
+.titulo-portada h2 {
+  color: white;
+  font-size: 85px;
+  font-family: "Poiret One", cursive;
+  text-shadow: -2px 0px 7px rgba(150, 150, 150, 1);
+  margin-top: 50px;
+  margin-left: 120px;
+}
+/*--------------------------tipos de seguros---------------------------------*/
+
+.contenedor-tipos-de-seguro {
+  width: 85%;
+  height: 50vh;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.seguro-automotor {
+  width: 1fr;
+  padding: 10px;
+  
+}
+.seguro-automotor img {
+  width: 55%;
+}
+.seguro-automotor h3 {
+  color: #57bc90;
+}
+
+#boton-cotizar-automotor {
+  color: white;
+  background-color: #57bc90;
+  border: none;
+  width: 150px;
+  height: 40px;
+ border-radius: 10px;
+  
+ 
+}
+.seguro-hogar {
+  width: 1fr;
+  padding: 10px;
+}
+.seguro-hogar img {
+  width: 65%;
+}
+.seguro-hogar h3 {
+  color: #57bc90;
+}
+#boton-cotizar-hogar {
+  color: white;
+  background-color: #57bc90;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+}
+.seguro-vida {
+  width: 1fr;
+  padding: 10px;
+}
+.seguro-vida img {
+  width: 55%;
+}
+.seguro-vida h3 {
+  color: #57bc90;
+}
+#boton-cotizar-vida {
+  color: white;
+  background-color: #57bc90;
+  border: none;
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+}
+
+/*------------------------banner-----------------------------------*/
+.contenedor-banner {
+  width: 100%;
+  height: 180px;
+  background-color: rgba(0, 0, 0, 0.897);
+  color: white;
+  text-align: center;
+  padding: 40px;
+}
+
+.contenedor-banner h4 {
+  font-size: 40px;
+}
+
+/*-----------------------cotizador------------------------------------*/
+
+.container-titulo-formulario {
+  padding: 30px;
+}
+
+.container-titulo-formulario h2 {
+  font-family: "Poiret One", cursive;
+  color: white;
+  text-align: center;
+  font-size: 45px;
+  transform: translateY(30px);
+}
+.row {
+  width: 100vw;
+  background-image: url(../images/hombreenpc.jpg);
 }
 
 .formulario {
@@ -90,11 +195,250 @@ h1 {
   font-size: 15px;
   list-style: none;
   font-weight: bold;
+  display: flex;
+  flex-direction: column;
 }
+/*---------------------beneficios---------------------*/
+
+.contenedor-beneficios {
+  background-image: url(../images/edificios.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 60px;
+}
+
+.beneficios {
+  background-color: #015249c7;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding: 40px;
+}
+
+/*----grua -----*/
+.grua {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+.contenedor-img-grua {
+  width: 40%;
+}
+.contenedor-img-grua img {
+  width: 60%;
+  margin-left: 10%;
+}
+
+.contenedor-texto-grua {
+  width: 60%;
+}
+.contenedor-texto-grua h3 {
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.contenedor-texto-grua p {
+  font-size: 25px;
+  font-family: "Poiret One", cursive;
+  line-height: 15px;
+}
+
+/*----app-----*/
+.app {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+.contenedor-img-app {
+  width: 40%;
+}
+.contenedor-img-app img {
+  width: 60%;
+  margin-left: 15%;
+  margin-bottom: 20%;
+}
+.contenedor-texto-app {
+  width: 60%;
+  padding: 5px;
+}
+
+.contenedor-texto-app h3 {
+  text-transform: uppercase;
+  font-size: 25px;
+}
+.contenedor-texto-app p {
+  font-size: 25px;
+  font-family: "Poiret One", cursive;
+  line-height: 15px;
+}
+
+/*-----descuentos-------*/
+.descuentos {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+.contenedor-img-descuentos {
+  width: 40%;
+}
+.contenedor-img-descuentos img {
+  width: 50%;
+  height: 80%;
+  margin-left: 15%;
+  margin-top: 0px;
+}
+.contenedor-texto-descuentos {
+  width: 60%;
+  vertical-align: middle;
+}
+.contenedor-texto-descuentos h3 {
+  text-transform: uppercase;
+  font-size: 25px;
+}
+.contenedor-texto-descuentos p {
+  font-size: 25px;
+  font-family: "Poiret One", cursive;
+  line-height: 15px;
+}
+
+/*---------------------Nosotros----------------------*/
+
+.contenedor-nosotros {
+  width: 100%;
+  height: 650px;
+  background: url(../images/hombreMano.jpg), #01524998;
+
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.contenedor-titulo-nosotros {
+  width: 100%;
+  height: 170px;
+  background-color: rgba(0, 0, 0, 0.897);
+  color: white;
+  text-align: center;
+  padding: 50px;
+}
+
+.contenedor-titulo-nosotros h2 {
+  color: white;
+  font-size: 50px;
+}
+
+.contenedor-nosotros p {
+  width: 50%;
+  font-size: 32px;
+  margin-left: 10%;
+  margin-top: 70px;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
+  transform: translateY(30px);
+}
+
+/*---------------------Contacto----------------------*/
+.contenedor-form {
+  width: 100%;
+  height: 700px;
+  background-color: #57bc90;
+  display: flex;
+  flex-direction: row;
+  color: white;
+}
+.contenedor-form .form-group {
+  width: 40%;
+  height: 80%;
+  margin: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contenedor-datos-contacto {
+  width: 40%;
+  height: 70%;
+  margin-top: 30px;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contenedor-datos-contacto i{
+
+  font-size: 40px;
+  align-items: center;
+}
+
+/*---------------------FOOTER----------------------*/
+i {
+
+  color: white;
+}
+
+i:hover{
+
+  color:rgb(219, 212, 212);
+}
+
+.contenedor-footer{
+
+  width: 100%;
+  height: 250px;
+  background-color: rgb(31, 31, 31);
+  display: flex;
+  flex-direction: row;
+}
+
+.contenedor-derechos{
+
+  width: 70%;
+  height: 100%;
+  color: white;
+  text-align: center;
+ 
+}
+
+.contenedor-mapa-sitio{
+
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+}
+
+.texto-derechos{
+
+    margin-top: 70px;
+}
+.mapa-del-sitio {
+  padding: 10px;
+  margin-top: 10px;
+  }
+.mapa-del-sitio ul{
+  display: flex;
+  flex-direction: column;
+  
+}
+.mapa-del-sitio ul li a{
+  font-size: 15px;
+  
+}
+
 
 /*---------------------modal----------------------*/
 .modal-title {
   font-family: "Righteous", cursive;
+}
+
+.titulo-valor-estimado{
+
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
 }
 
 .cards-group {
@@ -115,18 +459,65 @@ h5 {
   color: white;
   text-decoration: none;
 }
-
+/*............................................................................*/
+/*............................................................................*/
+/*............................................................................*/
+/*.........................PAGINA SOLICITUD...................................*/
+/*............................................................................*/
+/*............................................................................*/
 /*--------------------------------------------------solicitud-de-seguro----------*/
 
-.main-two {
-  background: rgb(119, 201, 212);
-  background: linear-gradient(
-    0deg,
-    rgba(79, 123, 129, 0.4) 0%,
-    rgba(87, 188, 144, 0.4) 100%
-  );
+.pantalla-solicitud{
+
+  width: 100%;
   height: 100vh;
+  background:url(../images/portada.jpeg),rgba(55, 184, 162, 0.589) ;
+  background-size: cover;
 }
+
+.contenedor-titulo-solicitud{
+    text-align: center;
+    padding-top: 30px ;
+    color:#015249c7 ;
+    font-family: "Poiret One", cursive;
+}
+
+.contenedor-formulario-solicitud{
+
+  background-color: rgba(55, 184, 162, 0.589);
+ width: 500px;
+ height: 600px;
+ transform: translateY(10px);
+ border-radius: 10px;
+ color: white;
+}
+
+.contenedor-campos-formulario{
+
+transform:translateY(50px)
+
+}
+
+.boton-solicitud{
+
+  margin-left: 40%;
+  margin-top: 30px;
+  background-color: #57bc90;
+  border:white;
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*----------------------MOBILE-VERSION-------------------*/
 @media (max-width: 992px) {
@@ -150,8 +541,11 @@ h5 {
 
   .formulario {
     margin-top: 40px;
+    margin-bottom: 50px;
   }
   .toast {
     transform: translateY(400px);
+    display: flex;
+    flex-direction: column;
   }
 }
