@@ -11,7 +11,7 @@
   width: 100%;
   height: 100vh;
 
-  background-image: url(../images/familia.jpg);
+  background-image: url(../images/familia2.jpg);
   background-size: 100% 100%;
   margin-bottom: 40px;
 }
@@ -70,7 +70,7 @@ ul li a:hover {
   font-family: "Poiret One", cursive;
   text-shadow: -2px 0px 7px rgba(150, 150, 150, 1);
   margin-top: 50px;
-  margin-left: 120px;
+  margin-left: 200px;
 }
 /*--------------------------tipos de seguros---------------------------------*/
 
@@ -86,7 +86,6 @@ ul li a:hover {
 .seguro-automotor {
   width: 1fr;
   padding: 10px;
-  
 }
 .seguro-automotor img {
   width: 55%;
@@ -101,9 +100,7 @@ ul li a:hover {
   border: none;
   width: 150px;
   height: 40px;
- border-radius: 10px;
-  
- 
+  border-radius: 10px;
 }
 .seguro-hogar {
   width: 1fr;
@@ -361,30 +358,26 @@ ul li a:hover {
   width: 40%;
   height: 70%;
   margin-top: 30px;
-    display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.contenedor-datos-contacto i{
-
+.contenedor-datos-contacto i {
   font-size: 40px;
   align-items: center;
 }
 
 /*---------------------FOOTER----------------------*/
 i {
-
   color: white;
 }
 
-i:hover{
-
-  color:rgb(219, 212, 212);
+i:hover {
+  color: rgb(219, 212, 212);
 }
 
-.contenedor-footer{
-
+.contenedor-footer {
   width: 100%;
   height: 250px;
   background-color: rgb(31, 31, 31);
@@ -392,17 +385,14 @@ i:hover{
   flex-direction: row;
 }
 
-.contenedor-derechos{
-
+.contenedor-derechos {
   width: 70%;
   height: 100%;
   color: white;
   text-align: center;
- 
 }
 
-.contenedor-mapa-sitio{
-
+.contenedor-mapa-sitio {
   width: 30%;
   height: 100%;
   display: flex;
@@ -411,32 +401,27 @@ i:hover{
   align-items: center;
 }
 
-.texto-derechos{
-
-    margin-top: 70px;
+.texto-derechos {
+  margin-top: 70px;
 }
 .mapa-del-sitio {
   padding: 10px;
   margin-top: 10px;
-  }
-.mapa-del-sitio ul{
+}
+.mapa-del-sitio ul {
   display: flex;
   flex-direction: column;
-  
 }
-.mapa-del-sitio ul li a{
+.mapa-del-sitio ul li a {
   font-size: 15px;
-  
 }
-
 
 /*---------------------modal----------------------*/
 .modal-title {
   font-family: "Righteous", cursive;
 }
 
-.titulo-valor-estimado{
-
+.titulo-valor-estimado {
   font-family: "Poiret One", cursive;
   font-weight: bold;
 }
@@ -467,57 +452,39 @@ h5 {
 /*............................................................................*/
 /*--------------------------------------------------solicitud-de-seguro----------*/
 
-.pantalla-solicitud{
-
+.pantalla-solicitud {
   width: 100%;
   height: 100vh;
-  background:url(../images/portada.jpeg),rgba(55, 184, 162, 0.589) ;
+  background: url(../images/portada.jpeg), rgba(55, 184, 162, 0.589);
   background-size: cover;
 }
 
-.contenedor-titulo-solicitud{
-    text-align: center;
-    padding-top: 30px ;
-    color:#015249c7 ;
-    font-family: "Poiret One", cursive;
+.contenedor-titulo-solicitud {
+  text-align: center;
+  padding-top: 30px;
+  color: #015249c7;
+  font-family: "Poiret One", cursive;
 }
 
-.contenedor-formulario-solicitud{
-
+.contenedor-formulario-solicitud {
   background-color: rgba(55, 184, 162, 0.589);
- width: 500px;
- height: 600px;
- transform: translateY(10px);
- border-radius: 10px;
- color: white;
+  width: 500px;
+  height: 600px;
+  transform: translateY(10px);
+  border-radius: 10px;
+  color: white;
 }
 
-.contenedor-campos-formulario{
-
-transform:translateY(50px)
-
+.contenedor-campos-formulario {
+  transform: translateY(50px);
 }
 
-.boton-solicitud{
-
+.boton-solicitud {
   margin-left: 40%;
   margin-top: 30px;
   background-color: #57bc90;
-  border:white;
+  border: white;
 }
-  
-
-
-
-
-
-
-
-
-
-
-
-
 
 /*----------------------MOBILE-VERSION-------------------*/
 @media (max-width: 992px) {
